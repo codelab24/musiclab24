@@ -23,7 +23,10 @@
         "doctrine/migrations": "dev-master",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "doctrine/data-fixtures" : "dev-master",
-        "avalanche123/imagine-bundle": "v2.1"
+        "avalanche123/imagine-bundle": "v2.1",
+        "friendsofsymfony/user-bundle": "*",
+        "sonata-project/admin-bundle": "dev-master",
+        "sonata-project/block-bundle": "2.2.*@dev"
     },
     "scripts": {
         "post-install-cmd": [

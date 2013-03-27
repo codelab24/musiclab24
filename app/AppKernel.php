@@ -20,6 +20,10 @@ class AppKernel extends Kernel
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Avalanche\Bundle\ImagineBundle\AvalancheImagineBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
+            new Sonata\jQueryBundle\SonatajQueryBundle(),
+            new Sonata\AdminBundle\SonataAdminBundle(),
             //
             new Application\Api\DefaultBundle\ApplicationApiDefaultBundle(),
             new Application\Api\UserBundle\ApplicationApiUserBundle(),

@@ -16,10 +16,11 @@
                 padding-bottom: 40px;
             }
         </style>
-    <link rel="stylesheet" href="{{ asset('/bundles/application/css/vendor/bootstrap/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('/bundles/application/css/vendor/bootstrap-google/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('/bundles/application/css/vendor/bootstrap-google/todc-bootstrap.css') }}">
 
 
-    <link rel="stylesheet" href="{{ asset('/bundles/application/css/vendor/bootstrap/bootstrap-responsive.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/bundles/application/css/vendor/bootstrap-google/bootstrap-responsive.css') }}">
     {#<link href="{{ asset('/bundles/application/css/vendor/microsoft/css.css') }}" rel="stylesheet">#}
         {#<link href="{{ asset('/bundles/application/css/vendor/microsoft/m-buttons.min.css') }}">#}
         {#<link href="{{ asset('/bundles/application/css/vendor/microsoft/m-icons.min.css') }}">#}
@@ -29,7 +30,7 @@
         <link href="{{ asset('/bundles/application/css/vendor/bootstrapmetro/css/bootmetro-charms.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('/bundles/application/css/vendor/bootstrapmetro/css/metro-ui-light.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('/bundles/application/css/vendor/bootstrapmetro/css/icomoon.css') }}" rel="stylesheet" type="text/css">
-        <link href="{{ asset('/bundles/application/css/vendor/microsoft/m-styles.min.css') }}" rel="stylesheet">
+        {#<link href="{{ asset('/bundles/application/css/vendor/microsoft/m-styles.min.css') }}" rel="stylesheet">#}
         {#<link href="{{ asset('/bundles/application/css/vendor/openwebicons/css/openwebicons-bootstrap.min.css') }}" rel="stylesheet">#}
         {#<link href="{{ asset('/bundles/application/css/vendor/fontawsome/css/font-awesome.min.css') }}" rel="stylesheet">#}
 
@@ -40,51 +41,98 @@
     <script src="{{ asset('/bundles/application/js/vendor/modernizr/modernizr-2.6.2.min.js') }}"></script>
 </head>
     <body>
-    <header id="nav-bar" class="container-fluid">
-        <div class="row-fluid">
-            <div class="span8">
-                <div id="header-container">
-                    <a id="backbutton"  href=""><i class="icon-rainy"></i></a>
-                    <h5>Music Application</h5>
-                    <div class="dropdown">
-                        <a class="header-dropdown dropdown-toggle accent-color" data-toggle="dropdown" href="#">
-                            Icons by IcoMoon
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="./hub.html">Hub</a></li>
-                            <li><a href="./tiles-templates.html">Tile Templates</a></li>
-                            <li><a href="./listviews.html">ListViews</a></li>
-                            <li><a href="./appbar-demo.html">Demo App-Bar</a></li>
-                            <li><a href="./table.html">Demo Table</a></li>
-                            <li><a href="./icons.html">Icons</a></li>
-                            <li><a href="./scaffolding.html">Bootstrap Scaffolding</a></li>
-                            <li><a href="./base-css.html">Bootstrap Base CSS</a></li>
-                            <li><a href="./components.html">Bootstrap Components</a></li>
-                            <li><a href="./javascript.html">Bootstrap Javascript</a></li>
-                            <li class="divider"></li>
-                            <li><a href="./index.html">Home</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="top-info pull-right">
-                <a href="#" class="pull-left">
-                    <div class="top-info-block">
-                        <h3>FirstName</h3>
-                        <h4>LastName</h4>
-                    </div>
-                    <div class="top-info-block">
-                        <b class="icon-user-2"></b>
-                    </div>
-                </a>
-                <hr class="separator pull-left">
-                <a id="settings" class="pull-left" href="#">
-                    <b class="icon-settings"></b>
-                </a>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="#">Project name</a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li class="divider"></li>
+                                <li class="nav-header">Nav header</li>
+                                <li><a href="#">Separated link</a></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    {#<ul class="nav pull-right">#}
+                        {#<li class="dropdown">#}
+                            {#<a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="icon-settings"></b> Dropdown <b class="caret"></b></a>#}
+                            {#<ul class="dropdown-menu">#}
+                                {#<li><a href="#">Action</a></li>#}
+                                {#<li><a href="#">Another action</a></li>#}
+                                {#<li><a href="#">Something else here</a></li>#}
+                                {#<li class="divider"></li>#}
+                                {#<li class="nav-header">Nav header</li>#}
+                                {#<li><a href="#">Separated link</a></li>#}
+                                {#<li><a href="#">One more separated link</a></li>#}
+                            {#</ul>#}
+                        {#</li>#}
+                    {#</ul>#}
+                </div><!--/.nav-collapse -->
             </div>
         </div>
-    </header>
+    </div>
+
+    {#<header id="nav-bar" class="container-fluid">#}
+        {#<div class="row-fluid">#}
+            {#<div class="span8">#}
+                {#<div id="header-container">#}
+                    {#<a id="backbutton"  href=""><i class="icon-rainy"></i></a>#}
+                    {#<h5>Music Application</h5>#}
+                    {#<div class="dropdown">#}
+                        {#<a class="header-dropdown dropdown-toggle accent-color" data-toggle="dropdown" href="#">#}
+                            {#Icons by IcoMoon#}
+                            {#<b class="caret"></b>#}
+                        {#</a>#}
+                        {#<ul class="dropdown-menu">#}
+                            {#<li><a href="./hub.html">Hub</a></li>#}
+                            {#<li><a href="./tiles-templates.html">Tile Templates</a></li>#}
+                            {#<li><a href="./listviews.html">ListViews</a></li>#}
+                            {#<li><a href="./appbar-demo.html">Demo App-Bar</a></li>#}
+                            {#<li><a href="./table.html">Demo Table</a></li>#}
+                            {#<li><a href="./icons.html">Icons</a></li>#}
+                            {#<li><a href="./scaffolding.html">Bootstrap Scaffolding</a></li>#}
+                            {#<li><a href="./base-css.html">Bootstrap Base CSS</a></li>#}
+                            {#<li><a href="./components.html">Bootstrap Components</a></li>#}
+                            {#<li><a href="./javascript.html">Bootstrap Javascript</a></li>#}
+                            {#<li class="divider"></li>#}
+                            {#<li><a href="./index.html">Home</a></li>#}
+                        {#</ul>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
+            {#<div class="top-info pull-right">#}
+                {#<a href="#" class="pull-left">#}
+                    {#<div class="top-info-block">#}
+                        {#<h3>FirstName</h3>#}
+                        {#<h4>LastName</h4>#}
+                    {#</div>#}
+                    {#<div class="top-info-block">#}
+                        {#<b class="icon-user-2"></b>#}
+                    {#</div>#}
+                {#</a>#}
+                {#<hr class="separator pull-left">#}
+                {#<a id="settings" class="pull-left" href="#">#}
+                    {#<b class="icon-settings"></b>#}
+                {#</a>#}
+            {#</div>#}
+        {#</div>#}
+    {#</header>#}
         <div class="container-fluid">
               <div class="row-fluid">
                   <div class="span8">

@@ -1,29 +1,60 @@
 security:
     encoders:
-        Application\Api\UserBundle\Entity\User: sha512
+        FOS\UserBundle\Model\UserInterface: sha512
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
-        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
 
     providers:
-        main:
-            entity: { class: Application\Api\UserBundle\Entity\User, property: username }
-
+        fos_userbundle:
+            id: fos_user.user_provider.username
 
     firewalls:
-        secured_area:
-            pattern:    ^/
-            anonymous: ~
+        main:
+            pattern: ^/
             form_login:
-                login_path:  /login
-                check_path:  /login_check
-            logout:
-                path:   /logout
-                target: /
+                provider: fos_userbundle
+                csrf_provider: form.csrf_provider
+            logout:       true
+            anonymous:    true
 
     access_control:
-        - { path: ^/admin, roles: ROLE_ADMIN }
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/, role: ROLE_ADMIN }
+
+
+
+
+
+#security:
+#    encoders:
+#        Application\Api\UserBundle\Entity\User: sha512
+#
+#    role_hierarchy:
+#        ROLE_ADMIN:       ROLE_USER
+#        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+#
+#    providers:
+#        main:
+#            entity: { class: Application\Api\UserBundle\Entity\User, property: username }
+#
+#
+#    firewalls:
+#        secured_area:
+#            pattern:    ^/
+#            anonymous: ~
+#            form_login:
+#                login_path:  /login
+#                check_path:  /login_check
+#            logout:
+#                path:   /logout
+#                target: /
+#
+#    access_control:
+#        - { path: ^/admin, roles: ROLE_ADMIN }
 
 
 
