@@ -124,3 +124,16 @@ services:
             - [ setAnnotationReader, [ @annotation_reader ] ]
 
 ####### End Doctrine Extentions
+
+
+############## Start Avalance Image Bundle
+
+
+
+avalanche_imagine:
+    filters:
+        my_thumb:
+            type:    thumbnail
+            options: { size: [120, 90], mode: outbound }
+
+###

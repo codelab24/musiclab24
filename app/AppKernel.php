@@ -19,6 +19,8 @@ class AppKernel extends Kernel
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
+            new Avalanche\Bundle\ImagineBundle\AvalancheImagineBundle(),
+            //
             new Application\Api\DefaultBundle\ApplicationApiDefaultBundle(),
             new Application\Api\UserBundle\ApplicationApiUserBundle(),
         );

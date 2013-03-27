@@ -19,3 +19,9 @@ login_check:
 logout:
     pattern:   /logout
 
+
+## Avalanche image
+_imagine:
+    resource: .
+    type:     imagine
+
