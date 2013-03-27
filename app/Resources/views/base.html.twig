@@ -1,13 +1,106 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    {% block stylesheets %}
+        <style>
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+        </style>
+    <link rel="stylesheet" href="{{ asset('/bundles/application/css/vendor/bootstrap/bootstrap.css') }}">
+
+
+    <link rel="stylesheet" href="{{ asset('/bundles/application/css/vendor/bootstrap/bootstrap-responsive.min.css') }}">
+    {#<link href="{{ asset('/bundles/application/css/vendor/microsoft/css.css') }}" rel="stylesheet">#}
+        {#<link href="{{ asset('/bundles/application/css/vendor/microsoft/m-buttons.min.css') }}">#}
+        {#<link href="{{ asset('/bundles/application/css/vendor/microsoft/m-icons.min.css') }}">#}
+        <link href="{{ asset('/bundles/application/css/vendor/bootstrapmetro/css/font.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('/bundles/application/css/vendor/bootstrapmetro/css/bootmetro.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('/bundles/application/css/vendor/bootstrapmetro/css/bootmetro-tiles.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('/bundles/application/css/vendor/bootstrapmetro/css/bootmetro-charms.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('/bundles/application/css/vendor/bootstrapmetro/css/metro-ui-light.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('/bundles/application/css/vendor/bootstrapmetro/css/icomoon.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('/bundles/application/css/vendor/microsoft/m-styles.min.css') }}" rel="stylesheet">
+        {#<link href="{{ asset('/bundles/application/css/vendor/openwebicons/css/openwebicons-bootstrap.min.css') }}" rel="stylesheet">#}
+        {#<link href="{{ asset('/bundles/application/css/vendor/fontawsome/css/font-awesome.min.css') }}" rel="stylesheet">#}
+
+    <link rel="stylesheet" href="{{ asset('/bundles/application/css/main.css') }}">
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+    <script src="{{ asset('/bundles/application/js/vendor/modernizr/modernizr-2.6.2.min.js') }}"></script>
+</head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    <header id="nav-bar" class="container-fluid">
+        <div class="row-fluid">
+            <div class="span8">
+                <div id="header-container">
+                    <a id="backbutton"  href=""><i class="icon-rainy"></i></a>
+                    <h5>Music Application</h5>
+                    <div class="dropdown">
+                        <a class="header-dropdown dropdown-toggle accent-color" data-toggle="dropdown" href="#">
+                            Icons by IcoMoon
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./hub.html">Hub</a></li>
+                            <li><a href="./tiles-templates.html">Tile Templates</a></li>
+                            <li><a href="./listviews.html">ListViews</a></li>
+                            <li><a href="./appbar-demo.html">Demo App-Bar</a></li>
+                            <li><a href="./table.html">Demo Table</a></li>
+                            <li><a href="./icons.html">Icons</a></li>
+                            <li><a href="./scaffolding.html">Bootstrap Scaffolding</a></li>
+                            <li><a href="./base-css.html">Bootstrap Base CSS</a></li>
+                            <li><a href="./components.html">Bootstrap Components</a></li>
+                            <li><a href="./javascript.html">Bootstrap Javascript</a></li>
+                            <li class="divider"></li>
+                            <li><a href="./index.html">Home</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="top-info pull-right">
+                <a href="#" class="pull-left">
+                    <div class="top-info-block">
+                        <h3>FirstName</h3>
+                        <h4>LastName</h4>
+                    </div>
+                    <div class="top-info-block">
+                        <b class="icon-user-2"></b>
+                    </div>
+                </a>
+                <hr class="separator pull-left">
+                <a id="settings" class="pull-left" href="#">
+                    <b class="icon-settings"></b>
+                </a>
+            </div>
+        </div>
+    </header>
+        <div class="container-fluid">
+              <div class="row-fluid">
+                  <div class="span8">
+                      {% block body %}{% endblock %}
+                  </div>
+                  <div class="span4">
+                      {% block sidebar %}{% endblock %}
+                  </div>
+
+              </div>
+        </div>
+
+        {% block javascripts %}
+        <script src="{{ asset('/bundles/application/js/vendor/jquery/jquery-1.9.1.min.js') }}"></script>
+        <script src="{{ asset('/bundles/application/js/vendor/bootstrap/bootstrap.min.js') }}"></script>
+
+        {% endblock %}
     </body>
 </html>
